@@ -11,6 +11,14 @@
 		FD1C78AD28F6F8AB009A3A8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C78AC28F6F8AB009A3A8E /* ContentView.swift */; };
 		FD1C78AF28F6F8AC009A3A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1C78AE28F6F8AC009A3A8E /* Assets.xcassets */; };
 		FD1C78B228F6F8AC009A3A8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1C78B128F6F8AC009A3A8E /* Preview Assets.xcassets */; };
+		FD1C78BA28F6FC20009A3A8E /* HealthKitQueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C78B928F6FC20009A3A8E /* HealthKitQueryView.swift */; };
+		FD1C78BE28F6FE33009A3A8E /* HealthKitStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C78BD28F6FE33009A3A8E /* HealthKitStoreService.swift */; };
+		FD1C78C128F70078009A3A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C78C028F70078009A3A8E /* Extensions.swift */; };
+		FDDA5C7028F92F5400773CAE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA5C6F28F92F5400773CAE /* Enums.swift */; };
+		FDDA5C7328F987FE00773CAE /* MyExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA5C7228F987FE00773CAE /* MyExerciseModel.swift */; };
+		FDDA5C7528F9B38700773CAE /* ExerciseSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA5C7428F9B38700773CAE /* ExerciseSummaryView.swift */; };
+		FDDA5C7728F9B89D00773CAE /* SummaryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA5C7628F9B89D00773CAE /* SummaryExercise.swift */; };
+		FDDA5C7928FAAF6100773CAE /* Last30SummaryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA5C7828FAAF6100773CAE /* Last30SummaryViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,15 @@
 		FD1C78AC28F6F8AB009A3A8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD1C78AE28F6F8AC009A3A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD1C78B128F6F8AC009A3A8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD1C78B828F6F8E1009A3A8E /* MacroComponentExercise.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacroComponentExercise.entitlements; sourceTree = "<group>"; };
+		FD1C78B928F6FC20009A3A8E /* HealthKitQueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitQueryView.swift; sourceTree = "<group>"; };
+		FD1C78BD28F6FE33009A3A8E /* HealthKitStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitStoreService.swift; sourceTree = "<group>"; };
+		FD1C78C028F70078009A3A8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FDDA5C6F28F92F5400773CAE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		FDDA5C7228F987FE00773CAE /* MyExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExerciseModel.swift; sourceTree = "<group>"; };
+		FDDA5C7428F9B38700773CAE /* ExerciseSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryView.swift; sourceTree = "<group>"; };
+		FDDA5C7628F9B89D00773CAE /* SummaryExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryExercise.swift; sourceTree = "<group>"; };
+		FDDA5C7828FAAF6100773CAE /* Last30SummaryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Last30SummaryViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +68,11 @@
 		FD1C78A928F6F8AB009A3A8E /* MacroComponentExercise */ = {
 			isa = PBXGroup;
 			children = (
+				FDDA5C7128F987F000773CAE /* Models */,
+				FD1C78BF28F7006B009A3A8E /* Helpers */,
+				FD1C78BC28F6FCEF009A3A8E /* Services */,
+				FD1C78BB28F6FC79009A3A8E /* Views */,
+				FD1C78B828F6F8E1009A3A8E /* MacroComponentExercise.entitlements */,
 				FD1C78AA28F6F8AB009A3A8E /* MacroComponentExerciseApp.swift */,
 				FD1C78AC28F6F8AB009A3A8E /* ContentView.swift */,
 				FD1C78AE28F6F8AC009A3A8E /* Assets.xcassets */,
@@ -65,6 +87,42 @@
 				FD1C78B128F6F8AC009A3A8E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD1C78BB28F6FC79009A3A8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C78B928F6FC20009A3A8E /* HealthKitQueryView.swift */,
+				FDDA5C7428F9B38700773CAE /* ExerciseSummaryView.swift */,
+				FDDA5C7828FAAF6100773CAE /* Last30SummaryViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD1C78BC28F6FCEF009A3A8E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C78BD28F6FE33009A3A8E /* HealthKitStoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD1C78BF28F7006B009A3A8E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C78C028F70078009A3A8E /* Extensions.swift */,
+				FDDA5C6F28F92F5400773CAE /* Enums.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FDDA5C7128F987F000773CAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDDA5C7228F987FE00773CAE /* MyExerciseModel.swift */,
+				FDDA5C7628F9B89D00773CAE /* SummaryExercise.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1C78C128F70078009A3A8E /* Extensions.swift in Sources */,
+				FD1C78BA28F6FC20009A3A8E /* HealthKitQueryView.swift in Sources */,
 				FD1C78AD28F6F8AB009A3A8E /* ContentView.swift in Sources */,
+				FD1C78BE28F6FE33009A3A8E /* HealthKitStoreService.swift in Sources */,
+				FDDA5C7328F987FE00773CAE /* MyExerciseModel.swift in Sources */,
+				FDDA5C7528F9B38700773CAE /* ExerciseSummaryView.swift in Sources */,
+				FDDA5C7028F92F5400773CAE /* Enums.swift in Sources */,
 				FD1C78AB28F6F8AB009A3A8E /* MacroComponentExerciseApp.swift in Sources */,
+				FDDA5C7928FAAF6100773CAE /* Last30SummaryViews.swift in Sources */,
+				FDDA5C7728F9B89D00773CAE /* SummaryExercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,12 +330,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacroComponentExercise/MacroComponentExercise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MacroComponentExercise/Preview Content\"";
 				DEVELOPMENT_TEAM = FANN368M5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app require to access Health";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app require to access Health";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,6 +351,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.MacroComponentExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,12 +365,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MacroComponentExercise/MacroComponentExercise.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MacroComponentExercise/Preview Content\"";
 				DEVELOPMENT_TEAM = FANN368M5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app require to access Health";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app require to access Health";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -311,6 +386,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.MacroComponentExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

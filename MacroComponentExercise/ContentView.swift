@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectionIndex = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $selectionIndex) {
+            HealthKitQueryView()
+                .tabItem {
+                    Image(systemName: "heart.rectangle.fill")
+                    Text("HealthKit Query")
+                }
+                .tag(0)
+            ExerciseSummaryView()
+                .tabItem {
+                    Image(systemName: "heart.rectangle")
+                    Text("This Month Summary")
+                }
+                .tag(1)
+            Last30SummaryViews()
+                .tabItem {
+                    Image(systemName: "calendar.circle.fill")
+                    Text("30 Days Summary")
+                }
+                .tag(2)
         }
-        .padding()
     }
 }
 
