@@ -29,6 +29,12 @@ struct ContentView: View {
                     Text("30 Days Summary")
                 }
                 .tag(2)
+            CustomProgressView()
+                .tabItem {
+                    Image(systemName: "calendar.circle.fill")
+                    Text("Custom Progress View")
+                }
+                .tag(3)
         }
     }
 }

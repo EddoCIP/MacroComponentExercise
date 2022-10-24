@@ -24,6 +24,15 @@ class HealthStore {
         }
     }
     
+    static let allTypes = Set([
+        HKQuantityType(.appleExerciseTime),
+        HKQuantityType(.activeEnergyBurned),
+        HKQuantityType(.distanceWalkingRunning),
+        HKQuantityType(.stepCount),
+        HKQuantityType(.height),
+        HKQuantityType(.bodyMass)
+    ])
+    
     static var quantityTypeList: [HKQuantityType] = [
         HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
         HKQuantityType.quantityType(forIdentifier: .height)!,
@@ -40,7 +49,11 @@ class HealthStore {
         
         guard let healthStore = self.healthStore else { return completion(false) }
         
-        healthStore.requestAuthorization(toShare: [], read: [stepType, .workoutType(), HKSeriesType.workoutType(), HKSeriesType.activitySummaryType(), heightType, bodyMassType, HKQuantityType(.appleExerciseTime), dateOfBirthType]) { success, error in
+//        healthStore.requestAuthorization(toShare: [], read: [stepType, .workoutType(), HKSeriesType.workoutType(), HKSeriesType.activitySummaryType(), heightType, bodyMassType, HKQuantityType(.appleExerciseTime), dateOfBirthType]) { success, error in
+//            completion(success)
+//        }
+        
+        healthStore.requestAuthorization(toShare: [], read: HealthStore.allTypes) { success, error in
             completion(success)
         }
     }
@@ -106,6 +119,25 @@ class HealthStore {
         
         if let healthStore = healthStore, let query = self.query {
             healthStore.execute(query)
+        }
+    }
+    
+    // MARK: From academy
+    func requestHealthStatistic(by category: String, completion: @escaping ([HKStatisticsCollection]) -> Void) {
+        guard let healthStore = healthStore, let type = HKObjectType.quantityType(forIdentifier: typeByCategory(category: category)) else { return }
+        
+    }
+    
+    func typeByCategory(category: String) -> HKQuantityTypeIdentifier {
+        switch category {
+        case "activeEnergyBurn":
+            return .activeEnergyBurned
+        case "exerciseTime":
+            return .appleExerciseTime
+        case "distanceWalkingRunning":
+            return .distanceWalkingRunning
+        default:
+            return .stepCount
         }
     }
     
