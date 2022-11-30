@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var selectionIndex = 0
     var body: some View {
         TabView(selection: $selectionIndex) {
-            HealthKitQueryView()
+            BackgroundTimer()
                 .tabItem {
                     Image(systemName: "heart.rectangle.fill")
                     Text("HealthKit Query")

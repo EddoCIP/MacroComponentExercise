@@ -11,7 +11,7 @@ import SwiftUI
 struct MacroComponentExerciseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BackgroundTimer()
         }
     }
 }

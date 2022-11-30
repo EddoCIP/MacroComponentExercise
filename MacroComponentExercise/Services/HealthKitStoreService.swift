@@ -41,21 +41,54 @@ class HealthStore {
     ]
     
     func requestAuthorization(completion: @escaping (Bool) -> Void) {
-        
-        let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
-        let heightType = HKQuantityType.quantityType(forIdentifier: .height)!
-        let bodyMassType = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
-        let dateOfBirthType = HKCharacteristicType(.dateOfBirth)
-        
         guard let healthStore = self.healthStore else { return completion(false) }
+        let sampleTypes: Set<HKSampleType> = [.workoutType(),
+                                              .quantityType(forIdentifier: .heartRate)!,
+                                              .quantityType(forIdentifier: .activeEnergyBurned)!,
+                                              .quantityType(forIdentifier: .distanceCycling)!,
+                                              .quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                              .quantityType(forIdentifier: .distanceWheelchair)!]
         
 //        healthStore.requestAuthorization(toShare: [], read: [stepType, .workoutType(), HKSeriesType.workoutType(), HKSeriesType.activitySummaryType(), heightType, bodyMassType, HKQuantityType(.appleExerciseTime), dateOfBirthType]) { success, error in
 //            completion(success)
 //        }
         
-        healthStore.requestAuthorization(toShare: [], read: HealthStore.allTypes) { success, error in
+        healthStore.requestAuthorization(toShare: sampleTypes, read: HealthStore.allTypes) { success, error in
             completion(success)
         }
+    }
+    
+    func loadWorkout(workout: HKWorkoutActivityType, startDate: Date, endDate: Date = Date(), completion: @escaping ([HKWorkout]?) -> Void) {
+        let workoutPredicate = HKQuery.predicateForWorkoutActivities(workoutActivityType: workout)
+        
+        let sourcePredicate = HKQuery.predicateForObjects(from: .default())
+        
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates:
+          [workoutPredicate, sourcePredicate])
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
+                                              ascending: true)
+        
+        let query = HKSampleQuery(
+          sampleType: .workoutType(),
+          predicate: compound,
+          limit: 0,
+          sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+            DispatchQueue.main.async {
+              //4. Cast the samples as HKWorkout
+              guard
+                let samples = samples as? [HKWorkout],
+                error == nil
+                else {
+                  completion(nil)
+                return
+              }
+                                      
+              completion(samples)
+            }
+        }
+        
+        HKHealthStore().execute(query)
     }
     
 //    func getDateOfBirth(completion: @escaping (DateComponents) -> Void) {
@@ -124,7 +157,7 @@ class HealthStore {
     
     // MARK: From academy
     func requestHealthStatistic(by category: String, completion: @escaping ([HKStatisticsCollection]) -> Void) {
-        guard let healthStore = healthStore, let type = HKObjectType.quantityType(forIdentifier: typeByCategory(category: category)) else { return }
+        guard let _ = healthStore, let type = HKObjectType.quantityType(forIdentifier: typeByCategory(category: category)) else { return }
         
     }
     
